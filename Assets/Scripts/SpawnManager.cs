@@ -35,16 +35,19 @@ public class SpawnManager : MonoBehaviour
         if(randomitem == 1)
         {
             Instantiate(growPrefab, spawnpoint, Quaternion.identity);
+            randomitem = Random.Range(1, 4);
         }
 
         if (randomitem == 2)
         {
             Instantiate(superjumpPrefab, spawnpoint, Quaternion.identity);
+            randomitem = Random.Range(1, 4);
         }
 
         if (randomitem == 3)
         {
             Instantiate(speedPrefab, spawnpoint, Quaternion.identity);
+            randomitem = Random.Range(1, 4);
         }
 
         time = 0;

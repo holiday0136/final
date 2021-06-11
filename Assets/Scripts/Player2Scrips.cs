@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1Scripts : MonoBehaviour
+public class Player2Scrips : MonoBehaviour
 {
     [SerializeField] GameObject firepunch;
     [SerializeField] Transform firepunchSpawn;
@@ -50,14 +50,14 @@ public class Player1Scripts : MonoBehaviour
         cooltime2 += Time.deltaTime;
     }
 
-   
+
     void GetInput()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             vAxis = -1;
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             vAxis = 1;
         }
@@ -67,7 +67,14 @@ public class Player1Scripts : MonoBehaviour
         }
 
 
-        jDown = Input.GetButtonDown("Jump");
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            jDown = true;
+        }
+        else
+        {
+            jDown = false;
+        }
 
         if (vAxis < 0)
         {
@@ -101,12 +108,12 @@ public class Player1Scripts : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Floor")
+        if (collision.gameObject.tag == "Floor")
         {
             isJump = 0;
         }
 
-         if(collision.gameObject.tag == "Superjump")
+        if (collision.gameObject.tag == "Superjump")
         {
             jumppower = 5;
             StartCoroutine("item");
@@ -117,19 +124,21 @@ public class Player1Scripts : MonoBehaviour
             speed = 10;
             StartCoroutine("item");
         }
-        
+
         if (collision.gameObject.tag == "Grow")
         {
             transform.localScale = new Vector3(3, 3, 3);
             StartCoroutine("item");
         }
 
-        if(collision.gameObject.tag == "SkyDie")
+        if (collision.gameObject.tag == "SkyDie")
         {
             skydie();
         }
 
         
+
+
     }
     IEnumerator item()
     {
@@ -137,14 +146,14 @@ public class Player1Scripts : MonoBehaviour
         jumppower = 3;
         speed = 5;
         transform.localScale = new Vector3(1, 1, 1);
-        yield return null;  
+        yield return null;
 
     }
 
     void skydie()
     {
-        life = life -1;
-        if(life == 0)
+        life = life - 1;
+        if (life == 0)
         {
             Destroy(gameObject);
         }
@@ -152,7 +161,7 @@ public class Player1Scripts : MonoBehaviour
     }
     void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.Keypad2))
         {
             if (cooltime >= 1)
             {
@@ -162,7 +171,7 @@ public class Player1Scripts : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.Keypad3))
         {
             if (cooltime2 >= 5)
             {
@@ -172,7 +181,6 @@ public class Player1Scripts : MonoBehaviour
             }
 
         }
+
     }
-
-
 }

@@ -14,6 +14,7 @@ public class Item : MonoBehaviour
     void Update()
     {
         transform.Rotate(Vector3.up * 10 * Time.deltaTime);
+        Destroy(gameObject, 15);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -23,4 +24,6 @@ public class Item : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
 }
