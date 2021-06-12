@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player2Scrips : MonoBehaviour
 {
@@ -156,6 +157,7 @@ public class Player2Scrips : MonoBehaviour
         if (life == 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene("main 1");
         }
         transform.localPosition = new Vector3(0, 5, 0);
     }

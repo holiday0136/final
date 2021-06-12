@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Force: 600
+  DestroyTime: 1
 --- !u!54 &-988139056724614948
 Rigidbody:
   m_ObjectHideFlags: 0
