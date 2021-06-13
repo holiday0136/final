@@ -9,6 +9,7 @@ public class Player1Scripts : MonoBehaviour
     [SerializeField] Transform firepunchSpawn;
     [SerializeField] Transform firepunchSpawn2;
     [SerializeField] GameObject apu;
+    [SerializeField] GameObject hyper;
     // 버프 설정
     public float speed; // 속도
     int jumppower = 3; // 점프
@@ -16,6 +17,7 @@ public class Player1Scripts : MonoBehaviour
     // 스텟 설정
     float cooltime = 1;
     float cooltime2 = 5;
+    float cooltime3 = 60;
     int life = 3; // 목숨
 
     // 이동 설정
@@ -49,6 +51,7 @@ public class Player1Scripts : MonoBehaviour
 
         cooltime += Time.deltaTime;
         cooltime2 += Time.deltaTime;
+        cooltime3 += Time.deltaTime;
     }
 
    
@@ -121,7 +124,7 @@ public class Player1Scripts : MonoBehaviour
         
         if (collision.gameObject.tag == "Grow")
         {
-            transform.localScale = new Vector3(3, 3, 3);
+            cooltime3 = 60;
             StartCoroutine("item");
         }
 
@@ -137,7 +140,6 @@ public class Player1Scripts : MonoBehaviour
         yield return new WaitForSecondsRealtime(5f);
         jumppower = 3;
         speed = 5;
-        transform.localScale = new Vector3(1, 1, 1);
         yield return null;  
 
     }
@@ -171,6 +173,16 @@ public class Player1Scripts : MonoBehaviour
                 anim.SetTrigger("Upper");
                 Instantiate(apu, firepunchSpawn2.transform.position, firepunchSpawn2.transform.rotation);
                 cooltime2 = 0;
+            }
+
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (cooltime3 >= 60)
+            {
+                anim.SetTrigger("Punch");
+                Instantiate(hyper, firepunchSpawn.transform.position, firepunchSpawn.transform.rotation);
+                cooltime3 = 0;
             }
 
         }

@@ -14,6 +14,8 @@ public class spawn : MonoBehaviour
 
         bulletRigidBody.AddForce(transform.up * Force);
 
+        bulletRigidBody.AddForce(transform.forward * Force);
+
         Destroy(gameObject, DestroyTime);
     }
 }

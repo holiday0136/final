@@ -793,6 +793,7 @@ MonoBehaviour:
   firepunch: {fileID: 4765919115337165859, guid: 46b6bc78b5143a74792805fde5483535, type: 3}
   firepunchSpawn: {fileID: 124089523}
   firepunchSpawn2: {fileID: 1940236816}
+  hyper: {fileID: 4574619271246301931, guid: 37360d1fe29eaa941ac90fe1f2b16740, type: 3}
   apu: {fileID: 6457869272979052950, guid: 6d83cfc76db33ce46a9f3b4ed4c5df05, type: 3}
   speed: 5
 --- !u!1 &1215154442
@@ -1164,6 +1165,7 @@ MonoBehaviour:
   firepunchSpawn: {fileID: 425647709}
   firepunchSpawn2: {fileID: 226703159}
   apu: {fileID: 6457869272979052950, guid: 6d83cfc76db33ce46a9f3b4ed4c5df05, type: 3}
+  hyper: {fileID: 4574619271246301931, guid: 37360d1fe29eaa941ac90fe1f2b16740, type: 3}
   speed: 5
 --- !u!54 &1734552965
 Rigidbody:
