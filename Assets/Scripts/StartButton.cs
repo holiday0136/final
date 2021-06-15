@@ -10,6 +10,15 @@ public class StartButton : MonoBehaviour
         SceneManager.LoadScene("Ingame");
     }
 
+    public void HelpChange()
+    {
+        SceneManager.LoadScene("Help");
+    }
+    public void XChange()
+    {
+        SceneManager.LoadScene("main");
+    }
+
     private void Update()
     {
         
