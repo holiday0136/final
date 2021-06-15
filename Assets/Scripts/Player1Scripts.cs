@@ -187,6 +187,6 @@ public class Player1Scripts : MonoBehaviour
 
         }
     }
-
+    //hpBarImage.enabled = false;
 
 }
