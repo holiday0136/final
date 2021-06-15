@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player2Scrips : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Player2Scrips : MonoBehaviour
     [SerializeField] Transform firepunchSpawn2;
     [SerializeField] GameObject hyper;
     [SerializeField] GameObject apu;
+    [SerializeField] private Image heart1;
+    [SerializeField] private Image heart2;
+    [SerializeField] private Image heart3;
     // 버프 설정
     public float speed; // 속도
     int jumppower = 3; // 점프
@@ -52,6 +56,19 @@ public class Player2Scrips : MonoBehaviour
         cooltime += Time.deltaTime;
         cooltime2 += Time.deltaTime;
         cooltime3 += Time.deltaTime;
+
+        if (life == 2)
+        {
+            heart1.enabled = false;
+        }
+        if (life == 1)
+        {
+            heart2.enabled = false;
+        }
+        if (life == 0)
+        {
+            heart3.enabled = false;
+        }
     }
 
 
