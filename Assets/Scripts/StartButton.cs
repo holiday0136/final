@@ -12,15 +12,12 @@ public class StartButton : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey("escape"))
-        {
-            Application.Quit();
-        }
+        
            
 
     }
     public void GameQuit()
     {
-        
+        Application.Quit();
     }
 }
